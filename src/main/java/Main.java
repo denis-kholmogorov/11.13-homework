@@ -8,20 +8,20 @@ public class Main
     public static void main(String[] args)
     {
 
-        int clients = 50;
+        int clients = 10;
 
         Bank bank = new Bank();
 
         for(int i = 0; i < clients; i++){
-            bank.setNewAccounts(String.valueOf(i), (long) ((Math.random() * 1000000)));
+            bank.setNewAccounts(String.valueOf(i), 1000000);
             listClients.add(new Client(i, bank, clients));
         }
         System.out.println(bank.accountCounts());
-
-        listClients.forEach(client -> {
-            client.run();
-        });
-
+        for(int i = 0; i < 1; i++) {
+            listClients.forEach(client -> {
+                client.run();
+            });
+        }
 
     }
 }

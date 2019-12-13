@@ -22,9 +22,9 @@ public class Client implements Runnable {
             numberAnotherClient = anotherAccountNumber(maxCountClients);
         }
 
-        int money = (int)(Math.random() * 100000);
+        int money = (int) (Math.random() * 65000);
+        System.out.println("Я " + nameNumber + " перевожу деньги клиенту " + numberAnotherClient + " сумму = " + money);
         bank.transfer(String.valueOf(nameNumber), String.valueOf(numberAnotherClient), money);
-        System.out.println("Я " + nameNumber + " перевожу деньги слиенту " + numberAnotherClient + " сумму = " + money);
         System.out.println("Мой " + nameNumber + " баланс " + bank.getBalance(String.valueOf(nameNumber)));
     }
 

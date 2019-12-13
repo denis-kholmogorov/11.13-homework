@@ -44,7 +44,7 @@ public class Bank
         } catch (ArithmeticException e){
             System.out.println("На счету нехватает средств или счет заблокирован");
         } catch (Exception e){
-            System.out.println("Уважаемый " + e.getMessage() + "! Ваш счет заблокирован");
+            System.err.println("Уважаемый клиент " + fromAccountNum + "! Ваш счет заблокирован совместно с клиентом " + toAccountNum);
         }
 
         if(amount > 50000) {
@@ -54,6 +54,7 @@ public class Bank
 
                 if(block){
                     accounts.get(fromAccountNum).setBlock(true);
+                    accounts.get(toAccountNum).setBlock(true);
                 }
             } catch (InterruptedException e)
             {
@@ -66,9 +67,9 @@ public class Bank
     /**
      * TODO: реализовать метод. Возвращает остаток на счёте.
      */
-    public long getBalance(String accountNum)
+    public synchronized long getBalance(String accountNum)
     {
-        synchronized (this) {
+         {
             return accounts.get(accountNum).getMoney();
         }
     }
