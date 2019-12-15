@@ -17,9 +17,10 @@ public class Main
             listClients.add(new Client(i, bank, clients));
         }
         System.out.println(bank.accountCounts());
+       
         for(int i = 0; i < 1; i++) {
             listClients.forEach(client -> {
-                client.run();
+                client.start();
             });
         }
 
