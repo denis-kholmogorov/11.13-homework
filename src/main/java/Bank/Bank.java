@@ -42,11 +42,15 @@ public class Bank {
                 + toAccount.getAccNumber() + " с балансом " + getBalance(toAccountNum) + " сумму - " + amount);
             try {
                 if (!fromAccount.isBlock() && !toAccount.isBlock()) {   // Проверка блокировки счетов
-                    fromAccount.reduceMoney(amount);                    // Проводим снятие денег
-                    toAccount.addMoney(amount);                         // Проводим пополнение денег
+                    synchronized (this) {
+                        fromAccount.reduceMoney(amount);                    // Проводим снятие денег
+                        toAccount.addMoney(amount);                         // Проводим пополнение денег
+                        }
                     if (amount > 50000) {                               // Проверка суммы
-                        fromAccount.setBlock(true);                     // Блокировка отправителя на время проверки
-                        toAccount.setBlock(true);                       // Блокировка принимающего
+                        synchronized (this) {
+                            fromAccount.setBlock(true);                     // Блокировка отправителя на время проверки
+                            toAccount.setBlock(true);                       // Блокировка принимающего
+                            }
                         System.out.println("Началась проверка счета клиента " + fromAccount.getAccNumber() +
                                 " и клиента " + toAccount.getAccNumber());
                         boolean block = isFraud(fromAccount.getAccNumber(), toAccount.getAccNumber(), amount); // Проверка перевода
@@ -54,8 +58,10 @@ public class Bank {
                             System.out.println("Проверка прошла успешно счета клиента " + fromAccount.getAccNumber()
                                     + " с балансом " + getBalance(fromAccountNum) + " и клиента " + toAccount.getAccNumber()
                                     + " с балансом " + getBalance(toAccountNum) + " разблокированы!");
-                            fromAccount.setBlock(false);        // Разблокировка счета отправителя
-                            toAccount.setBlock(false);          // Разблокировка счета принимающего
+                            synchronized (this) {
+                                fromAccount.setBlock(false);        // Разблокировка счета отправителя
+                                toAccount.setBlock(false);          // Разблокировка счета принимающего
+                                }
                         } else {
                             System.err.println("Счет клиента " + fromAccount.getAccNumber() + " с балансом "
                                     + getBalance(fromAccountNum) + " и счет клиента  "
@@ -91,7 +97,7 @@ public class Bank {
      */
     public long getBalance(String accountNum) {
         {
-            synchronized (accounts) {
+            synchronized (this) {
                 return accounts.get(accountNum).getMoney();
             }
         }
