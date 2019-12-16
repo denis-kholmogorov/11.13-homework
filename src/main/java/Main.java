@@ -13,7 +13,7 @@ public class Main
         Bank bank = new Bank();
 
         for(int i = 0; i < clients; i++){
-            bank.setNewAccounts(String.valueOf(i),  100000);
+            bank.setNewAccounts(String.valueOf(i),  100000 + i);
             listClients.add(new Client(i, bank, clients));
         }
         System.out.println(bank.accountCounts() - 1);

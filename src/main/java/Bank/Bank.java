@@ -86,7 +86,7 @@ public class Bank {
         System.out.println("ПРОВЕРКА! Клиент " + fromAccount.getAccNumber() + " с балансом "
                 + getBalance(fromAccountNum) + " пытается перевести деньги клиенту "
                 + toAccount.getAccNumber() + " с балансом " + getBalance(toAccountNum)
-                + " сумму - " + amount +" необходима проверка");
+                + " сумму - " + amount + " необходима проверка");
         try {
             if (!fromAccount.isBlock() && !toAccount.isBlock()) {
                 fromAccount.reduceMoney(amount);
@@ -103,8 +103,10 @@ public class Bank {
                     fromAccount.setBlock(false);
                     toAccount.setBlock(false);
                 } else {
-                    System.err.println("Счета клиента " + fromAccount.getAccNumber() + " и клиента "
-                            + toAccount.getAccNumber() + " Заблокированы!!!");
+                    System.err.println("Счет клиента " + fromAccount.getAccNumber() + " с балансом "
+                            + getBalance(fromAccountNum) + " и счет клиента  "
+                            + toAccount.getAccNumber() + " с балансом " + getBalance(toAccountNum)
+                            + " Заблокированы");
                 }
 
             } else if (fromAccount.isBlock()) {

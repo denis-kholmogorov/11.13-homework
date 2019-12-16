@@ -24,7 +24,7 @@ class Account
     }
 
     public void reduceMoney(long money) throws UnavailableQuantityException {
-        if (this.money >= money && !block) {
+        if (this.money >= money) {
             this.money = this.money - money;
         } else {
             throw new UnavailableQuantityException("ВАЖНО! У клиента номер " + accNumber + " нехватает средств для перевода");
