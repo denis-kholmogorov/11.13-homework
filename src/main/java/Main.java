@@ -8,21 +8,19 @@ public class Main
     public static void main(String[] args)
     {
 
-        int clients = 10;
+        int clients = 7;
 
         Bank bank = new Bank();
 
         for(int i = 0; i < clients; i++){
-            bank.setNewAccounts(String.valueOf(i), 1000000);
+            bank.setNewAccounts(String.valueOf(i),  100000);
             listClients.add(new Client(i, bank, clients));
         }
-        System.out.println(bank.accountCounts());
-       
-        for(int i = 0; i < 1; i++) {
-            listClients.forEach(client -> {
-                client.start();
-            });
-        }
+        System.out.println(bank.accountCounts() - 1);
 
+        listClients.forEach(client -> {
+            new Thread(client).start();
+
+        });
     }
 }

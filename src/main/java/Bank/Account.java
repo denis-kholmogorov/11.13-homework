@@ -19,23 +19,15 @@ class Account
         return this.money;
     }
 
-    public void addMoney(long money) throws NullPointerException, ArithmeticException {
-
-        if(block){
-            throw new NullPointerException(accNumber);
-        }
-        else if (this.money >= money ) {
+    public void addMoney(long money) {
             this.money = this.money + money;
-        } else {
-            throw new ArithmeticException(accNumber);
-        }
     }
 
-    public void reduceMoney(long money) throws Exception {
+    public void reduceMoney(long money) throws UnavailableQuantityException {
         if (this.money >= money && !block) {
             this.money = this.money - money;
         } else {
-            throw new Exception(accNumber);
+            throw new UnavailableQuantityException("ВАЖНО! У клиента номер " + accNumber + " нехватает средств для перевода");
         }
     }
 
