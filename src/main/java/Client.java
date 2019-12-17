@@ -21,7 +21,7 @@ public class Client implements Runnable {
                 bank.transfer(String.valueOf(nameNumber), String.valueOf(6), 60000);
                 break;
             case 1:
-                bank.transfer(String.valueOf(nameNumber), String.valueOf(2), 20000);
+                bank.transfer(String.valueOf(nameNumber), String.valueOf(5), 20000);
                 break;
             case 2:
                 bank.transfer(String.valueOf(nameNumber), String.valueOf(1), 10000);
@@ -33,7 +33,7 @@ public class Client implements Runnable {
                 bank.transfer(String.valueOf(nameNumber), String.valueOf(2), 400000);
                 break;
             case 5:
-                bank.transfer(String.valueOf(nameNumber), String.valueOf(2), 60000);
+                bank.transfer(String.valueOf(nameNumber), String.valueOf(1), 49999);
                 break;
             case 6:
                 bank.transfer(String.valueOf(nameNumber), String.valueOf(0), 10000);

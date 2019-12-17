@@ -41,9 +41,12 @@ public class Bank {
                 + getBalance(fromAccountNum) + " пытается перевести деньги клиенту "
                 + toAccount.getAccNumber() + " с балансом " + getBalance(toAccountNum) + " сумму - " + amount);
             try {
+
                 if (!fromAccount.isBlock() && !toAccount.isBlock()) {   // Проверка блокировки счетов
-                    fromAccount.reduceMoney(amount);                    // Проводим снятие денег
-                    toAccount.addMoney(amount);                         // Проводим пополнение денег
+                    synchronized (this) {
+                        fromAccount.reduceMoney(amount);                    // Проводим снятие денег
+                        toAccount.addMoney(amount);                         // Проводим пополнение денег
+                    }
                     if (amount > 50000) {                               // Проверка суммы
                         fromAccount.setBlock(true);                     // Блокировка отправителя на время проверки
                         toAccount.setBlock(true);                       // Блокировка принимающего
@@ -54,8 +57,10 @@ public class Bank {
                             System.out.println("Проверка прошла успешно счета клиента " + fromAccount.getAccNumber()
                                     + " с балансом " + getBalance(fromAccountNum) + " и клиента " + toAccount.getAccNumber()
                                     + " с балансом " + getBalance(toAccountNum) + " разблокированы!");
-                            fromAccount.setBlock(false);        // Разблокировка счета отправителя
-                            toAccount.setBlock(false);          // Разблокировка счета принимающего
+                            synchronized (this) {
+                                fromAccount.setBlock(false);        // Разблокировка счета отправителя
+                                toAccount.setBlock(false);          // Разблокировка счета принимающего
+                            }
                         } else {
                             System.err.println("Счет клиента " + fromAccount.getAccNumber() + " с балансом "
                                     + getBalance(fromAccountNum) + " и счет клиента  "
