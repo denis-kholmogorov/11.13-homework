@@ -3,10 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="c7458f69-c1e2-451e-ac8e-f93bdc80839d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Bank/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Bank/Account.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Bank/Bank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Bank/Bank.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Bank/Account.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Bank/Account.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Bank/Bank.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Bank/Bank.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Client.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -113,6 +116,10 @@
       <screen x="0" y="38" width="1680" height="1012" />
     </state>
     <state x="648" y="232" width="378" height="616" key="#com.intellij.ide.util.MemberChooser/0.38.1680.1012@0.38.1680.1012" timestamp="1576161940867" />
+    <state x="0" y="38" width="724" height="1002" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1577090531390">
+      <screen x="0" y="38" width="1680" height="1012" />
+    </state>
+    <state x="0" y="38" width="724" height="1002" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.38.1680.1012@0.38.1680.1012" timestamp="1577090531390" />
     <state x="487" y="142" width="699" height="795" key="CommitChangelistDialog2" timestamp="1576506828974">
       <screen x="0" y="38" width="1680" height="1012" />
     </state>
@@ -125,22 +132,22 @@
       <screen x="0" y="38" width="1680" height="1012" />
     </state>
     <state x="631" y="333" width="428" height="474" key="FileChooserDialogImpl/0.38.1680.1012@0.38.1680.1012" timestamp="1576498598182" />
-    <state width="1634" height="268" key="GridCell.Tab.0.bottom" timestamp="1576568052149">
+    <state width="1634" height="268" key="GridCell.Tab.0.bottom" timestamp="1577100461993">
       <screen x="0" y="38" width="1680" height="1012" />
     </state>
-    <state width="1634" height="268" key="GridCell.Tab.0.bottom/0.38.1680.1012@0.38.1680.1012" timestamp="1576568052149" />
-    <state width="1634" height="268" key="GridCell.Tab.0.center" timestamp="1576568052149">
+    <state width="1634" height="268" key="GridCell.Tab.0.bottom/0.38.1680.1012@0.38.1680.1012" timestamp="1577100461993" />
+    <state width="1634" height="268" key="GridCell.Tab.0.center" timestamp="1577100461992">
       <screen x="0" y="38" width="1680" height="1012" />
     </state>
-    <state width="1634" height="268" key="GridCell.Tab.0.center/0.38.1680.1012@0.38.1680.1012" timestamp="1576568052149" />
-    <state width="1634" height="268" key="GridCell.Tab.0.left" timestamp="1576568052148">
+    <state width="1634" height="268" key="GridCell.Tab.0.center/0.38.1680.1012@0.38.1680.1012" timestamp="1577100461992" />
+    <state width="1634" height="268" key="GridCell.Tab.0.left" timestamp="1577100461992">
       <screen x="0" y="38" width="1680" height="1012" />
     </state>
-    <state width="1634" height="268" key="GridCell.Tab.0.left/0.38.1680.1012@0.38.1680.1012" timestamp="1576568052148" />
-    <state width="1634" height="268" key="GridCell.Tab.0.right" timestamp="1576568052149">
+    <state width="1634" height="268" key="GridCell.Tab.0.left/0.38.1680.1012@0.38.1680.1012" timestamp="1577100461992" />
+    <state width="1634" height="268" key="GridCell.Tab.0.right" timestamp="1577100461992">
       <screen x="0" y="38" width="1680" height="1012" />
     </state>
-    <state width="1634" height="268" key="GridCell.Tab.0.right/0.38.1680.1012@0.38.1680.1012" timestamp="1576568052149" />
+    <state width="1634" height="268" key="GridCell.Tab.0.right/0.38.1680.1012@0.38.1680.1012" timestamp="1577100461992" />
     <state width="1634" height="332" key="GridCell.Tab.1.bottom" timestamp="1576508790334">
       <screen x="0" y="38" width="1680" height="1012" />
     </state>
@@ -157,10 +164,10 @@
       <screen x="0" y="38" width="1680" height="1012" />
     </state>
     <state width="1634" height="332" key="GridCell.Tab.1.right/0.38.1680.1012@0.38.1680.1012" timestamp="1576508790333" />
-    <state x="541" y="403" key="com.intellij.ide.util.TipDialog" timestamp="1576567070204">
+    <state x="541" y="403" key="com.intellij.ide.util.TipDialog" timestamp="1577089375825">
       <screen x="0" y="38" width="1680" height="1012" />
     </state>
-    <state x="541" y="403" key="com.intellij.ide.util.TipDialog/0.38.1680.1012@0.38.1680.1012" timestamp="1576567070204" />
+    <state x="541" y="403" key="com.intellij.ide.util.TipDialog/0.38.1680.1012@0.38.1680.1012" timestamp="1577089375825" />
     <state x="645" y="465" width="390" height="160" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1576506820350">
       <screen x="0" y="38" width="1680" height="1012" />
     </state>
