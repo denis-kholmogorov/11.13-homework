@@ -3,19 +3,19 @@ import Bank.Bank;
 public class Main
 {
 
-    public static Double BIG_TRANSFERS_PERCENT = 0.05;  //процент транзакций для проверки
-    public static Integer TRANSFERS_QUANTITY = 50;  //кол-во транзакций каждого потока
-    public static Integer THREADS_QUANTITY = 8;          //кол-во потоков
-    public static Integer ACCOUNTS_QUANTITY = 10;       //количество сгенерированных аккаунтов
+    public static Double BIG_TRANSFERS_PERCENT = 0.05;
+    public static Integer TRANSFERS_QUANTITY = 50;
+    public static Integer THREADS_QUANTITY = 8;
+    public static Integer ACCOUNTS_QUANTITY = 10;
     public static int maxBigCount = (int)((50 * 8) * BIG_TRANSFERS_PERCENT);
 
     public static void main(String[] args)
     {
         Bank bank = new Bank();
-        long money = 100000 + (long) (Math.random() * 500000);            // получаем случайное число в диапазоне от 100 миллионов до 1000 миллионов
+        long money = 100000 + (long) (Math.random() * 500000);
         System.out.println(money);
         for (int i = 0; i < ACCOUNTS_QUANTITY; i++) {
-            bank.setNewAccounts(i, money);                    // Генерируем аккаунт и заносим в мапу
+            bank.setNewAccounts(i, money);
         }
 
         System.out.println("Аккаунты сгенерированны в количестве | " + ACCOUNTS_QUANTITY);
@@ -30,7 +30,7 @@ public class Main
                 {
                     long amount =(int)((Math.random() * 50000) + (50000 * BIG_TRANSFERS_PERCENT));
 
-                    if(amount > 50000 && maxBigCount > maxCount)
+                    if(amount > 50000 && maxBigCount > maxCount) // проверка для контроля моксимального количества операций с большими деьгами
                     {
                         maxCount++;
                     }
