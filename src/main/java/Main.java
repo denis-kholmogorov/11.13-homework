@@ -29,6 +29,7 @@ public class Main
                 for (int j = 0; j < TRANSFERS_QUANTITY; j++)
                 {
                     long amount =(int)((Math.random() * 50000) + (50000 * BIG_TRANSFERS_PERCENT));
+
                     if(amount > 50000 && maxBigCount > maxCount)
                     {
                         maxCount++;
